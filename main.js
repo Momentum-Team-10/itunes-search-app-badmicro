@@ -32,6 +32,15 @@ songsList.addEventListener("click", (e) => {
   }
 })
 
+// function generateUrl(input) {
+//   if(document.getElementById("search-songTitle").checked) {
+//     return url + input + "&entity=musicTrack"
+//   } else if(document.getElementById("search-artist").checked) {
+//     return url + input + "&entity=allArtist"
+//   } else {
+//     return url + input + "&entity=album"
+//   }
+// }
 
 /*
     Generates a Song "Card" to add to the UL of playable options
@@ -40,20 +49,19 @@ songsList.addEventListener("click", (e) => {
 */
 
 function generateSongCard(songObj) {
-  if (songObj.kind === "song") {
+  // if (songObj.kind === "song") {
     const li = document.createElement("li");
     //li.trackId = songObj.trackId;
     li.imgSrc = songObj.artworkUrl100;
     li.trackName = songObj.trackName;
     li.artistName = songObj.artistName;
     li.musicSrc = songObj.previewUrl;
-    //add styles to song card here with li.classList.add();
 
     renderSongCard(li);
     songsList.appendChild(li);
-  } else {
-    console.error("Invalid Filetype, cannot generate song card");
-  }
+  // } else {
+  //   console.error("Invalid Filetype, cannot generate song card");
+  // }
 }
 
 function renderSongCard(li) {

@@ -24,6 +24,14 @@
         required
       />
       <button id="search-song" type="submit">Search</button>
+      <div id="search-radio-container" class="ma2">
+        <input type="radio" id="search-songTitle" name="search-type" value="artist" checked>
+        <label for="search-artist">Song Title</label>
+        <input type="radio" id="search-artist" name="search-type" value="artist" class="ml3">
+        <label for="search-artist">Artist Name</label>
+        <input type="radio" id="search-album" name="search-type" value="artist" class="ml3">
+        <label for="search-artist">Album Title</label>
+      </div>
     </form>
     <section id="search-results" class="mw9 center ph3-ns">
       <ul id="song-list" style="list-style: none;"class="cf ph2-ns"></ul>
