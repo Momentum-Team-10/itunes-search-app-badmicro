@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
+    />
     <script src="main.js" defer></script>
     <title>Music Search</title>
   </head>
@@ -20,8 +24,8 @@
       />
       <button id="search-song" type="submit">Search</button>
     </form>
-    <section id="search-results">
-      <ul id="song-list"></ul>
+    <section id="search-results" class="mw9 center ph3-ns">
+      <ul id="song-list" style="list-style: none;"class="cf ph2-ns"></ul>
     </section>
   </body>
 </html>

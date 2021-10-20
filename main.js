@@ -8,19 +8,20 @@ const audioPlayer = document.getElementById("audio-player");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchInput = document.getElementById("search-param");
-
   fetch(url + searchInput.value)
     .then((res) => res.json())
     .then((data) => {
       //for every item create a list element that is
       // img, song title, band
       //console.log(data);
+      clearSongsList();
       for (let item of data.results) {
         if (item.kind === "song") {
           generateSongCard(item);
         }
       }
     });
+  form.reset();
 });
 
 songsList.addEventListener("click", (e) => {
@@ -57,10 +58,16 @@ function generateSongCard(songObj) {
 
 function renderSongCard(li) {
   li.innerHTML = `
-    <div class="Song-Card">
+    <div class="fl w-100 w-third-ns pa2 ba">
         <img src="${li.imgSrc}" alt="Album Cover">
-        <p id=${li.musicSrc}>${li.trackName}</p>
+        <p id=${li.musicSrc} class="">${li.trackName}</p>
         <p>${li.artistName}</p>
     </div>
     `;
+}
+
+function clearSongsList(){
+  while(songsList.firstChild) {
+    songsList.removeChild(songsList.firstChild);
+  }
 }
