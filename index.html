@@ -8,17 +8,17 @@
   </head>
   <body>
     <h1>The Music Player</h1>
-    <div id="audio-container"></div>
+    <div id="audio-container">
+        <audio controls></audio>
+    </div>
     <form id="song-form">
-      <div class="song-field">
-        <input
-          id="search-param"
-          type="text"
-          placeholder="Enter Band or Artist"
-          required
-        />
-        <button id="search-song" type="submit">Search</button>
-      </div>
+      <input
+        id="search-param"
+        type="text"
+        placeholder="Enter Band, Artist, or Song"
+        required
+      />
+      <button id="search-song" type="submit">Search</button>
     </form>
     <section id="search-results">
       <ul id="song-list"></ul>
