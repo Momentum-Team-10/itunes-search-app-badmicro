@@ -59,9 +59,11 @@ function generateSongCard(songObj) {
 function renderSongCard(li) {
   li.innerHTML = `
     <div class="fl w-100 w-third-ns pa2 ba">
+      <div class="flex justify-center">
         <img src="${li.imgSrc}" alt="Album Cover">
-        <p id=${li.musicSrc} class="">${li.trackName}</p>
-        <p>${li.artistName}</p>
+      </div>
+      <p id=${li.musicSrc} class="tc cursor: pointer">${li.trackName}</p>
+      <p class="tc">${li.artistName}</p>
     </div>
     `;
 }
