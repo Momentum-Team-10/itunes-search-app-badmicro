@@ -5,6 +5,11 @@ const songsList = document.getElementById("song-list");
 const form = document.querySelector("#song-form");
 const audioPlayer = document.getElementById("audio-player");
 
+/*
+    Listen for user submit input on the input form and creates
+    a list of songs based on the search
+*/
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchInput = document.getElementById("search-param");
@@ -23,6 +28,11 @@ form.addEventListener("submit", (e) => {
     });
   form.reset();
 });
+
+/*
+    Creates the source when a song title is clicked on, and
+    loads the src into the music player
+*/
 
 songsList.addEventListener("click", (e) => {
   console.log(e.target.id)
@@ -64,6 +74,11 @@ function generateSongCard(songObj) {
   // }
 }
 
+/*
+    Processes the list information in a user-friendly way.
+    Creatrs the individual "song-card" that the user sees.
+*/
+
 function renderSongCard(li) {
   li.innerHTML = `
     <div class="fl w-150 h-150 w-third-ns pa2 ba">
@@ -75,6 +90,11 @@ function renderSongCard(li) {
     </div>
     `;
 }
+
+/*
+    Clears the search results from the list
+*/
+
 
 function clearSongsList(){
   while(songsList.firstChild) {
