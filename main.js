@@ -61,7 +61,7 @@ songsList.addEventListener("click", (e) => {
 function generateSongCard(songObj) {
   // if (songObj.kind === "song") {
     const li = document.createElement("li");
-    //li.trackId = songObj.trackId;
+    li.album = songObj.collectionName;
     li.imgSrc = songObj.artworkUrl100;
     li.trackName = songObj.trackName;
     li.artistName = songObj.artistName;
@@ -81,12 +81,13 @@ function generateSongCard(songObj) {
 
 function renderSongCard(li) {
   li.innerHTML = `
-    <div class="fl w-150 h-150 w-third-ns pa2 ba">
+    <div class="fl w-150 h-150 w-third-ns pa2 ba ma2">
       <div class="flex justify-center">
         <img src="${li.imgSrc}" alt="Album Cover">
       </div>
-      <p id=${li.musicSrc} class="tc i cursor: pointer">${li.trackName}"</p>
-      <p class="tc">${li.artistName}</p>
+      <p id=${li.musicSrc} class="tc i cursor: pointer f3">"${li.trackName}"</p>
+      <p class="f6 tc">Album: ${li.album}</p>
+      <p class="tc">Artist: ${li.artistName}</p>
     </div>
     `;
 }
